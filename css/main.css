@@ -57,9 +57,11 @@
      }
      .logo:hover{
          color: var(--link-blue-color);
+         transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
      }
      .header .span-logo:hover{
          color: var(--logo-black-color);
+         transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
      }
      .logo{ 
         display:inline-block;
@@ -71,14 +73,14 @@
      .link{
          text-decoration: none;
      }
-     .site-navitems{
+      .underline{
          text-decoration: none;
          transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
          position: relative;
          line-height: 1;
      }
      
-     .site-navitems::after{
+     .underline::after{
         display:inline-block;
         position: absolute;
         top: 45px;
@@ -89,9 +91,10 @@
         content: "";
         transition: width 0.3s ease-out; /*задаём время анимации*/
       }
-      .site-navitems:hover:after,
-      .site-navitems:focus:after {
+      .underline:hover:after,
+      .underline:focus:after {
           width: 100%;
+        
       }
 
      .site-nav {
@@ -136,10 +139,12 @@
      .site-nav .link:hover,
      .site-nav .link:focus{
          color:var(--link-blue-color);
+         transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
      }
      .contact-nav .link:hover,
      .contact-nav .link:focus{
         color:var(--link-blue-color);
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
     .mail-icon, .phone-icon{
         display: flex;
@@ -201,11 +206,11 @@
         padding: 10px 32px;
        
     }
-    .section .button:hover,
+    /*.section .button:hover,
     .section .button:focus{
         color: var(--title-black-color) ;
         background-color: var(--title-white-color);
-    }
+    }*/
    .backdrop{
         position: fixed;
         opacity: 1;
@@ -398,7 +403,7 @@
         margin: 0;
     }
   
-    .iconteam:not(:last-child){
+    .icon-team:not(:last-child){
         margin-right: 10px;
     }
     .icon-team-link {
@@ -420,6 +425,8 @@
     .icon-team-link:focus {
         fill:#FFFFFF;
         background-color: var(--link-blue-color);
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+       
      }
     /* Постоянные клиенты */
     .clients{
@@ -453,11 +460,13 @@
         background-color: #FFFFFF;
         cursor: pointer;
         fill: #afb1b8;
+    
     }
     .client-icon-button:hover,
     .client-icon-button:focus{
         fill: var(--link-blue-color);
         border-color: var(--link-blue-color);
+        transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
 
@@ -489,9 +498,11 @@
     }
     .logo:hover{
         color:var(--link-blue-color);
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
     .span-logo:hover{
         color:var(--title-white-color);
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
     .address {
         text-decoration: none;
@@ -503,6 +514,7 @@
     .footer-list .address:hover,
     .footer-list .address:focus{
         color: var(--link-blue-color);
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
     .footer-list .link {
         color: rgb(255, 255,255,0.6);
@@ -560,11 +572,15 @@
         cursor: pointer;
         object-fit: contain;
         fill:var(--title-white-color);
+        transition: link 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
     .icon-teamfooter-link:hover,
     .icon-teamfooter-link:focus {
         fill:#FFFFFF;
-        background-color: var(--link-blue-color);}
+        background-color: var(--link-blue-color);
+    }
+        
+    
     
     
     /* PORTFOLIO*/
@@ -604,6 +620,7 @@
         background-color:var(--link-blue-color);
         color: var(--title-white-color); 
         box-shadow: 0px 4px 4px rgb(0,0,0,0.25),0px 4px 4px rgb(0,0,0,0.25); 
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
     .portfolio-list{
         display: flex;
@@ -622,6 +639,7 @@
     .portfolioli:focus{
         box-shadow:0px 1px 1px rgb(0,0,0,0.12),1px 4px 6px rgb(0,0,0,0.16); 
         cursor: pointer;
+       
     }
     .cards{
         text-align: start;
@@ -644,19 +662,17 @@
     .text-information{
         position: absolute;
         height: 100%;
-        width: 100%;
-        top: 100%;
+        top: 0;
         left: 0;
-        opacity: 0;
+      
         overflow: auto;
         display: flex;
         align-items: center;
-        box-sizing: border-box;
         padding-right: 24px;
         padding-left: 24px;
         background-color: rgb(33, 150, 243, 0.9);
         transform: translateY(100%);
-        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform 500ms linear;
         
 
     }
@@ -664,27 +680,13 @@
         color: #FFFFFF;
         font-weight: 400;
         font-size: 18px;
-        line-height: 1, 56;
+        line-height: 1.56;
         letter-spacing: 0,03em;
         
     }
-
-    .portcard:hover,
-    .portcard:focus {
-       box-shadow:0px 1px 1px rgba(0, 0, 0, 0.12),
-       0px 4px 4px rgba(0, 0, 0, 0.6),
-       1px 4px 6px rgba(0, 0, 0, 0.16);
-       cursor:pointer;
-       
-    }
-
    .portcard:hover .text-information,
    .portcard:focus .text-information{
-       transform:translateY(0%);
-       transform:scale(1);
-       opacity: 1;
-       top: 0;
-
+       transform: translateY(0%);
        }
 
 
